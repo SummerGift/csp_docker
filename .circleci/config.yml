@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  nightly-build:
+    docker:
+      - image: circleci/python:3.7.4
+    resource_class: small
+    steps:
+      - checkout
+      - run: echo "A first hello"
+
+workflows:
+  main:
+      jobs:
+        - nightly-build

@@ -7,15 +7,12 @@ before_install:
   - echo "before install"
 
 before_script:
-  # 登录到 docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 script:
-  # 这里编写测试代码的命令
-  - echo "hello"
+  - echo "begin to build docker image"
 
 after_success:
-  # 当代码测试通过后执行的命令
-  - docker build -t git_test:v1.0 .
-  - docker tag git_test:v1.0 dockeruserone1/git_test:v1.0
-  - docker push dockeruserone1/git_test:v1.0
+  - docker build -t csp_test:v1.0 .
+  - docker tag csp_test:v1.0 summergift/csp_test:v1.0
+  - docker push summergift/csp_test:v1.0

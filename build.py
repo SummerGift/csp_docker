@@ -1,6 +1,6 @@
-
 import os
 import textwrap
+
 
 def increase_env():
     env_path = "/etc/profile"
@@ -14,7 +14,6 @@ def increase_env():
     with open(env_path, 'a') as f:
         f.write(env)
 
-        
+
 if __name__ == "__main__":
     increase_env()
-

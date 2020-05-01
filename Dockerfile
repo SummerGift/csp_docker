@@ -12,8 +12,7 @@ RUN apt-get update \
     && apt-get clean \
     && pip install pytest pytest-html \
 
-RUN rm -rf /rt-thread \
-    && mkdir /rt-thread && cd /rt-thread \
+RUN mkdir /rt-thread && cd /rt-thread \
     && wget -c https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \
     && tar jxf gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \
     && rm -rf gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2 \

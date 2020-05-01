@@ -1,6 +1,9 @@
 FROM python:3.6-stretch
 MAINTAINER SummerGift
 
+ADD config_env.py /etc/apt/
+RUN ls /etc/apt/config_*
+
 # 1. install some basic library
 RUN apt-get update \
     && apt-get -qq install gcc-multilib libsdl-dev scons \
@@ -25,10 +28,5 @@ RUN cd /rt-thread \
     && wget -c https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz \
     && tar xzvf openjdk-11.0.1_linux-x64_bin.tar.gz \
     && rm -rf openjdk-11.0.1_linux-x64_bin.tar.gz \
-
-ADD ./build.py /etc/apt/
-RUN python /etc/apt/build.py
-
-
-
+    && python /etc/apt/config_env.py
 

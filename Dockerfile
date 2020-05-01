@@ -6,7 +6,7 @@ ADD ./build.py /etc/apt/
 ADD ./eclipse /rt-thread/eclipse
 
 RUN apt-get update \
-    && apt-get -qq install gcc-multilib libc6:i386 libgcc1:i386 libstdc++5:i386 libstdc++6:i386 libsdl-dev scons \
+    && apt-get -qq install gcc-multilib libc6:i386 libsdl-dev scons \
     && apt-get --no-install-recommends --allow-unauthenticated --fix-broken -y install wget bzip2 make vim git ca-certificates scons sudo \
     && apt-get clean \
     && pip install pytest pytest-html

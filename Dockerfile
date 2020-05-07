@@ -6,10 +6,11 @@ RUN ls /etc/apt/config_*
 
 # 1. install some basic library
 RUN apt-get update \
-    && apt-get -qq install gcc-multilib libsdl-dev scons \
+    && apt-get -qq install gcc-multilib libsdl-dev scons libc6\
     && apt-get --no-install-recommends --allow-unauthenticated --fix-broken -y install lib32ncurses5 lib32z1 wget bzip2 make vim git ca-certificates scons sudo \
     && apt-get clean \
     && pip install pytest pytest-html
+    && ldd  --version
 
 # 2. install arm gcc tool chain
 RUN mkdir /rt-thread

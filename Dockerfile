@@ -7,7 +7,7 @@ RUN ls /etc/apt/config_*
 # 1. install some basic library
 RUN apt-get update \
     && apt-get -qq install gcc-multilib libsdl-dev scons libc6 libc6-dev \
-    && apt-get --no-install-recommends --allow-unauthenticated --fix-broken -y install lib32ncurses5 lib32z1 wget bzip2 make vim git ca-certificates scons sudo \
+    && apt-get --no-install-recommends --allow-unauthenticated --fix-broken -y install lib32z1 wget bzip2 make vim git ca-certificates scons sudo \
     && apt-get clean \
     && pip install pytest pytest-html \
     && rm -rf /var/lib/apt/lists/* \

@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.6-slim-buster
 MAINTAINER SummerGift
 
 ADD config_env.py /etc/apt/

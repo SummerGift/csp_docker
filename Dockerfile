@@ -9,7 +9,7 @@ RUN apt-get update \
     && apt-get -qq install gcc-multilib libsdl-dev scons libc6 libc6-dev \
     && apt-get --no-install-recommends --allow-unauthenticated --fix-broken -y install lib32z1 wget bzip2 make vim git ca-certificates scons sudo \
     && apt-get clean \
-    && pip install pytest pytest-html click\
+    && pip install pytest pytest-html click \
     && rm -rf /var/lib/apt/lists/* \
     && ldd --version
 
